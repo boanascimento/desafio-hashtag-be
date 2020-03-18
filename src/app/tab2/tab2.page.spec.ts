@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab2Page } from './tab2.page';
+import { ProfileComponentModule } from '../profile/profile.module';
 
 describe('Tab2Page', () => {
   let component: Tab2Page;
@@ -11,7 +11,7 @@ describe('Tab2Page', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Tab2Page],
-      imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
+      imports: [IonicModule.forRoot(), ProfileComponentModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(Tab2Page);
@@ -22,4 +22,8 @@ describe('Tab2Page', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it ('verify methods retults', () => {
+    expect(component.teste()).toBeTruthy();
+  })
 });
