@@ -1,7 +1,7 @@
 {
   "name": "desafio-hashtag-be",
   "integrations": {
-    "capacitor": {}
+    "cordova": {}
   },
   "type": "angular"
 }
