@@ -1,18 +1,18 @@
 import { Comment } from './comment.model';
 
 export class Post {
-  private pictures!: Array<string>;
+  private id!: number;
+  private picture!: string;
   private title!: string;
   private description!: string;
   private comments!: Array<Comment>;
-  private totalPosts!: number;
 
   constructor(json?: any) {
     if (json != null) {
-      this.pictures = json.pictures;
+      this.id = json.id;
+      this.picture = json.picture;
       this.title = json.title;
       this.description = json.description;
-      this.totalPosts = json.totalPosts;
       this.comments = Comment.toArray(json.comments);
     }
   }
