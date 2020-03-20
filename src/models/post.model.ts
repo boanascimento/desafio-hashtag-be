@@ -5,6 +5,8 @@ export class Post {
   private picture!: string;
   private title!: string;
   private description!: string;
+  private avatar!: string;
+  private feedOwnerName!: string;
   private comments!: Array<Comment>;
 
   constructor(json?: any) {
@@ -13,6 +15,8 @@ export class Post {
       this.picture = json.picture;
       this.title = json.title;
       this.description = json.description;
+      this.avatar = json.avatar;
+      this.feedOwnerName = json.feedOwnerName;
       this.comments = Comment.toArray(json.comments);
     }
   }

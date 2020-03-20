@@ -1,0 +1,69 @@
+$default-transition: 0.2s;
+$color-grey-1      : rgb(45, 45, 45);
+
+.row-header {
+  margin: 1rem 0.4rem 0.4rem 0.4rem;
+
+  ion-avatar {
+    width : 2.2rem;
+    height: 2.2rem;
+    margin: none;
+
+    ion-img {
+      width : 2.2rem;
+      height: 2.2rem;
+    }
+  }
+
+  ion-col.owner {
+    ion-text.name {
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.row-comment-btn {
+  ion-icon.comment {
+    color : white;
+    margin: 0.4rem;
+  }
+}
+
+.row-list-comments {
+  .div-comments {
+    transition      : $default-transition;
+    height          : 0;
+    width           : 100%;
+    overflow        : hidden;
+    overflow-y      : scroll;
+    background-color: $color-grey-1;
+    border-radius   : 0.8rem;
+    ;
+
+    ion-avatar {
+      height: 1.2rem;
+      width : 1.2rem;
+
+      ion-img {
+        height: 1.2rem;
+        width : 1.2rem;
+        margin: 0.4rem;
+      }
+    }
+
+    ion-text.commenter-name {
+      font-size: 0.6rem;
+    }
+  }
+
+  .show-comments {
+    height: 10rem;
+  }
+}
+
+.row-description {
+  ion-text.description {
+    font-size: 0.7rem;
+  }
+}

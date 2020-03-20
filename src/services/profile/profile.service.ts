@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Profile } from 'src/models/profile.model';
+import { Post } from 'src/models/post.model';
 
 export abstract class IProfileService {
   abstract async getProfile(): Promise<Profile>;
@@ -10,7 +11,8 @@ export abstract class IProfileService {
 
 @Injectable()
 export class ProfileService extends BaseService implements IProfileService {
-  private profileEP = "profile";
+  private profileEP = "/profile";
+  private feedsEP = "/feeds";
   constructor(
     protected translateService: TranslateService,
     protected http: HttpClient,
@@ -27,9 +29,26 @@ export class ProfileService extends BaseService implements IProfileService {
         const res = new Profile(response);
         resolv(res);
       }, error => {
-          console.log("DiseaseService -> getProfile -> error", error)
-          reject(false);
-        }
+        console.log("DiseaseService -> getProfile -> error", error)
+        reject(false);
+      }
+      );
+    });
+  }
+
+
+  /**
+   * Used to get user profile.
+   */
+  public async getFeeds(): Promise<Post[]> {
+    return new Promise((resolv, reject) => {
+      this.get(this.feedsEP).subscribe((response: any) => {
+        const res = Post.toArray(response);
+        resolv(res);
+      }, error => {
+        console.log("ProfileService -> error -> getFeeds()", error)
+        reject(false);
+      }
       );
     });
   }
