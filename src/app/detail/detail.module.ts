@@ -3,16 +3,16 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { PostComponent } from './post.component';
+import { DetailComponent } from './detail.component';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: 'post', component: PostComponent }])
+    RouterModule.forChild([{ path: 'detail', component: DetailComponent }])
   ],
-  declarations: [PostComponent],
-  exports: [PostComponent]
+  declarations: [DetailComponent],
+  exports: [DetailComponent]
 })
-export class PostComponentModule {}
+export class DetailComponentModule {}

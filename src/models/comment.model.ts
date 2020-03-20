@@ -2,12 +2,14 @@ import { Post } from './post.model';
 
 export class Comment {
   private comment!: string;
-  private commenterProfileId!: string;
+  private commenterAvatar!: string;
+  private commenterName!: string;
 
   constructor(json?: any) {
     if (json != null) {
       this.comment = json.comment;
-      this.commenterProfileId = json.commenterProfileId;
+      this.commenterAvatar = json.commenterAvatar;
+      this.commenterName = json.commenterName;
     }
   }
 

@@ -1,0 +1,52 @@
+<ion-row class="row-header ion-align-items-center">
+  <ion-col size="2">
+    <ion-avatar>
+      <ion-img [src]="feed?.avatar"> </ion-img>
+    </ion-avatar>
+  </ion-col>
+  <ion-col class="owner" size="10">
+    <ion-text class="name">
+      {{feed?.feedOwnerName}}
+    </ion-text>
+  </ion-col>
+</ion-row>
+
+<ion-row class="row-picture">
+  <ion-col size="12" class="picture ion-no-padding">
+    <ion-img [src]="feed?.picture"></ion-img>
+  </ion-col>
+</ion-row>
+
+<ion-row class="row-comment-btn">
+  <ion-col size="2">
+    <ion-img class="comment" (click)="showComments()" [src]="srcCommentIcon">
+      </ion-img>
+  </ion-col>
+</ion-row>
+
+<ion-row class="row-description">
+  <ion-col size="12">
+    <ion-text class="description">
+      {{feed?.description}}
+    </ion-text>
+  </ion-col>
+</ion-row>
+
+<ion-row class="row-list-comments">
+  <ion-col size="12" class="ion-no-padding">
+    <div [class.show-comments]="show" class="div-comments">
+      <ion-row *ngFor="let comment of feed?.comments" class="ion-align-items-center">
+        <ion-col size="1">
+          <ion-avatar>
+            <ion-img [src]="comment?.commenterAvatar"> </ion-img>
+          </ion-avatar>
+        </ion-col>
+        <ion-col size="11">
+          <ion-text class="commenter-name">
+            {{comment?.commenterName}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-col>
+</ion-row>

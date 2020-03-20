@@ -1,7 +1,14 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      <ion-row class="ion-align-items-center">
+        <ion-col size="1">
+          <ion-img class="camera" [src]="'assets/icon/icon-camera.png'"></ion-img>
+        </ion-col>
+        <ion-col size="8">
+          <ion-img class="insta-name" [src]="'assets/icon/icon-insta-name.png'"></ion-img>
+        </ion-col>
+      </ion-row>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,6 +17,7 @@
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 2</ion-title>
+      
     </ion-toolbar>
   </ion-header>
 
