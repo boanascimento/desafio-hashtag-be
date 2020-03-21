@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ListPostComponent } from './list-post.component';
+import { ListPostPage } from './list-post.page';
 import { PostComponent } from './post/post.component';
 
 @NgModule({
@@ -11,9 +11,9 @@ import { PostComponent } from './post/post.component';
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: 'list-post', component: ListPostComponent }])
+    RouterModule.forChild([{ path: 'list-post', component: ListPostPage }])
   ],
-  declarations: [ListPostComponent, PostComponent],
-  exports: [ListPostComponent, PostComponent]
+  declarations: [ListPostPage, PostComponent],
+  exports: [ListPostPage, PostComponent]
 })
-export class ListPostComponentModule {}
+export class ListPostPageModule {}

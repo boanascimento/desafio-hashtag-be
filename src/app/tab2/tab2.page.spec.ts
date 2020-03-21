@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { Tab2Page } from './tab2.page';
-import { ProfileComponentModule } from '../profile/profile.module';
+import { ProfilePageModule } from '../profile/profile.module';
 
 describe('Tab2Page', () => {
   let component: Tab2Page;
@@ -11,7 +11,7 @@ describe('Tab2Page', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Tab2Page],
-      imports: [IonicModule.forRoot(), ProfileComponentModule]
+      imports: [IonicModule.forRoot(), ProfilePageModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(Tab2Page);

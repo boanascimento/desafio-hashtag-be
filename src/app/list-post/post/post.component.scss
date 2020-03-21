@@ -24,8 +24,9 @@ $color-grey-1      : rgb(45, 45, 45);
 }
 
 .row-comment-btn {
-  ion-icon.comment {
-    color : white;
+  ion-img.comment {
+    width: 1.2rem;
+    height: 1.2rem;
     margin: 0.4rem;
   }
 }

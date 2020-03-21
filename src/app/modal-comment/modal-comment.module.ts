@@ -3,16 +3,16 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { DetailPage } from './detail.page';
+import { ModalCommentComponent } from './modal-comment.page';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: 'detail', component: DetailPage }])
+    RouterModule.forChild([{ path: 'modal-comment', component: ModalCommentComponent }])
   ],
-  declarations: [DetailPage],
-  exports: [DetailPage]
+  declarations: [ModalCommentComponent],
+  exports: [ModalCommentComponent]
 })
-export class DetailPageModule {}
+export class ModalCommentComponentModule {}

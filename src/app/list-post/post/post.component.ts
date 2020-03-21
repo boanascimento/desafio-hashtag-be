@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Post } from 'src/models/post.model';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-post',
@@ -13,7 +14,9 @@ export class PostComponent implements OnInit {
   public show: boolean;
   public srcCommentIcon = "assets/icon/icon-comment.png";
 
-  constructor() { }
+  constructor(
+    private modalCtrl: ModalController
+  ) { }
 
   ngOnInit() { }
 
