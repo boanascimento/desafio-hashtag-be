@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ModalCommentComponent } from './modal-comment.page';
+import { ModalCommentPage } from './modal-comment.page';
 
-describe('ModalCommentComponent', () => {
-  let component: ModalCommentComponent;
-  let fixture: ComponentFixture<ModalCommentComponent>;
+describe('ModalCommentPage', () => {
+  let component: ModalCommentPage;
+  let fixture: ComponentFixture<ModalCommentPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalCommentComponent ],
+      declarations: [ ModalCommentPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ModalCommentComponent);
+    fixture = TestBed.createComponent(ModalCommentPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

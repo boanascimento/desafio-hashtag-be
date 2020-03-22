@@ -1,13 +1,13 @@
 import { Comment } from './comment.model';
 
 export class Post {
-  private id!: number;
-  private picture!: string;
-  private title!: string;
-  private description!: string;
-  private avatar!: string;
-  private feedOwnerName!: string;
-  private comments!: Array<Comment>;
+  public id!: number;
+  public picture!: string[];
+  public title!: string;
+  public description!: string;
+  public avatar!: string;
+  public feedOwnerName!: string;
+  public comments: Comment[];
 
   constructor(json?: any) {
     if (json != null) {

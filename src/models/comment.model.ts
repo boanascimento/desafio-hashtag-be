@@ -1,9 +1,7 @@
-import { Post } from './post.model';
-
 export class Comment {
-  private comment!: string;
-  private commenterAvatar!: string;
-  private commenterName!: string;
+  public comment!: string;
+  public commenterAvatar!: string;
+  public commenterName!: string;
 
   constructor(json?: any) {
     if (json != null) {

@@ -1,3 +1,22 @@
-<p>
-  modal-comment works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()" expand="block" fill="clear" shape="round">
+        <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+        <ion-img class="img-back-button" [src]="backButtonImg"></ion-img>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row *ngFor="let comment of comments" class="ion-align-items-center row-list-comments">
+    <ion-col size="2">
+      <ion-avatar>
+        <ion-img [src]="comment?.commenterAvatar"> </ion-img>
+      </ion-avatar>
+    </ion-col>
+    <ion-col class="comment" size="10">
+      <b>{{comment?.commenterName}}</b> {{comment.comment}}
+    </ion-col>
+  </ion-row>
+</ion-content>
