@@ -58,7 +58,10 @@
     "ordered-imports": false,
     "quotemark": [
       true,
-      "single"
+      "single",
+      "avoid-escape",
+      "avoid-template",
+      "jsx-double"
     ],
     "trailing-comma": false,
     "no-output-on-prefix": true,
@@ -83,6 +86,25 @@
       "app",
       "page",
       "kebab-case"
-    ]
+    ],
+    "no-duplicate-variable": true,
+    "no-unused-variable": [
+      true
+    ],
+    "prefer-array-literal": false,
+    "ter-arrow-parens": false,
+    "align": [
+      false
+    ],
+    "no-increment-decrement": false,
+    "no-param-reassign": false,
+    "valid-jsdoc": [
+      true
+    ],
+    "variable-name": [
+      true,
+      "allow-leading-underscore"
+    ],
+    
   }
 }

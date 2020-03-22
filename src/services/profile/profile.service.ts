@@ -6,7 +6,8 @@ import { Profile } from 'src/models/profile.model';
 import { Post } from 'src/models/post.model';
 
 export abstract class IProfileService {
-  abstract async getProfile(): Promise<Profile>;
+  abstract async getProfile(id: string): Promise<Profile>;
+  abstract async getFeeds(): Promise<Post[]>;
 }
 
 @Injectable()
@@ -14,8 +15,8 @@ export class ProfileService extends BaseService implements IProfileService {
   private profileEP = "/profile";
   private feedsEP = "/feeds";
   constructor(
-    protected translateService: TranslateService,
-    protected http: HttpClient,
+    protected translateService?: TranslateService,
+    protected http?: HttpClient,
   ) {
     super();
   }
@@ -23,10 +24,11 @@ export class ProfileService extends BaseService implements IProfileService {
   /**
    * Used to get user profile.
    */
-  public async getProfile(): Promise<Profile> {
+  public async getProfile(id: string): Promise<Profile> {
     return new Promise((resolv, reject) => {
-      this.get(this.profileEP).subscribe((response: any) => {
+      this.get(`${this.profileEP}/${id}`).subscribe((response: any) => {
         const res = new Profile(response);
+        console.log('ProfileService -> res', res)
         resolv(res);
       }, error => {
         console.log("DiseaseService -> getProfile -> error", error)
