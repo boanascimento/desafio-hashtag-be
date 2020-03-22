@@ -1,4 +1,4 @@
-import { ModalCommentPage } from "./modal-comment.po";
+import { ModalCommentPage } from './modal-comment.po';
 
 describe('new App', () => {
   let page: ModalCommentPage;

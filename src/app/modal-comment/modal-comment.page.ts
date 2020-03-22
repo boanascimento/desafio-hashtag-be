@@ -10,7 +10,7 @@ export class ModalCommentPage implements OnInit {
 
   public comments: Comment[];
 
-  public backButtonImg = "assets/icon/back.png";
+  public backButtonImg = 'assets/icon/back.png';
 
   constructor(
     private modalCtrl?: ModalController,
