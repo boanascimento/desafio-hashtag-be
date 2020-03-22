@@ -1,9 +1,9 @@
 import { Post } from './post.model';
 
 export class Profile {
-  private id!: string;
-  private name!: string;
-  private posts!: Array<Post>;
+  public id!: string;
+  public name!: string;
+  public posts!: Post;
 
   constructor(json?: any) {
     if (json != null) {

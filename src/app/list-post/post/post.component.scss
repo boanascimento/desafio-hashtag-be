@@ -17,48 +17,25 @@ $color-grey-1      : rgb(45, 45, 45);
 
   ion-col.owner {
     ion-text.name {
-      font-size: 0.8rem;
+      font-size  : 0.8rem;
       font-weight: 600;
+    }
+  }
+
+  ion-col.options {
+    ion-img {
+      width : 1rem;
+      height: 1rem;
+      transform: rotate(90deg);
     }
   }
 }
 
 .row-comment-btn {
-  ion-icon.comment {
-    color : white;
+  ion-img.comment {
+    width : 1.2rem;
+    height: 1.2rem;
     margin: 0.4rem;
-  }
-}
-
-.row-list-comments {
-  .div-comments {
-    transition      : $default-transition;
-    height          : 0;
-    width           : 100%;
-    overflow        : hidden;
-    overflow-y      : scroll;
-    background-color: $color-grey-1;
-    border-radius   : 0.8rem;
-    ;
-
-    ion-avatar {
-      height: 1.2rem;
-      width : 1.2rem;
-
-      ion-img {
-        height: 1.2rem;
-        width : 1.2rem;
-        margin: 0.4rem;
-      }
-    }
-
-    ion-text.commenter-name {
-      font-size: 0.6rem;
-    }
-  }
-
-  .show-comments {
-    height: 10rem;
   }
 }
 

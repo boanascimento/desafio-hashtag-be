@@ -4,10 +4,10 @@ import { Post } from 'src/models/post.model';
 
 @Component({
   selector: 'app-list-post',
-  templateUrl: './list-post.component.html',
-  styleUrls: ['./list-post.component.scss'],
+  templateUrl: './list-post.page.html',
+  styleUrls: ['./list-post.page.scss'],
 })
-export class ListPostComponent implements OnInit {
+export class ListPostPage implements OnInit {
 
   public feeds: Post[];
 
