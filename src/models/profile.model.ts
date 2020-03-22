@@ -3,12 +3,14 @@ import { Post } from './post.model';
 export class Profile {
   public id!: string;
   public name!: string;
+  public avatar!: string;
   public posts!: Post[];
 
   constructor(json?: any) {
     if (json != null) {
       this.name = json.name;
       this.id = json.id;
+      this.avatar = json.avatar;
       this.posts = Post.toArray(json.posts);
     }
   }

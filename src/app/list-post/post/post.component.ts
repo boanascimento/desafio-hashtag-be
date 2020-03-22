@@ -25,7 +25,9 @@ export class PostComponent implements OnInit {
     private modalCtrl: ModalController
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    console.log('PostComponent -> ngOnInit -> this.feed', this.feed)
+  }
 
   /**
    * Opens a modal to see the comments.
