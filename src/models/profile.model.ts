@@ -3,7 +3,7 @@ import { Post } from './post.model';
 export class Profile {
   public id!: string;
   public name!: string;
-  public posts!: Post;
+  public posts!: Post[];
 
   constructor(json?: any) {
     if (json != null) {

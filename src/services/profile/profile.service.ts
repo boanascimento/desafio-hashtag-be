@@ -14,8 +14,8 @@ export class ProfileService extends BaseService implements IProfileService {
   private profileEP = "/profile";
   private feedsEP = "/feeds";
   constructor(
-    protected translateService: TranslateService,
-    protected http: HttpClient,
+    protected translateService?: TranslateService,
+    protected http?: HttpClient,
   ) {
     super();
   }

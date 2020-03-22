@@ -13,8 +13,8 @@ export class ModalCommentPage implements OnInit {
   public backButtonImg = "assets/icon/back.png";
 
   constructor(
-    private modalCtrl: ModalController,
-    private navParams: NavParams
+    private modalCtrl?: ModalController,
+    private navParams?: NavParams
   ) { }
 
   ngOnInit() {

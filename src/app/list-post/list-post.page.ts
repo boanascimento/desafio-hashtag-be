@@ -11,7 +11,7 @@ export class ListPostPage implements OnInit {
 
   public feeds: Post[];
 
-  constructor(private profileService: ProfileService) { }
+  constructor(private profileService?: ProfileService) { }
 
   ngOnInit() {
     Promise.all([
@@ -27,7 +27,6 @@ export class ListPostPage implements OnInit {
       console.log("ListPostComponent -> getFeeds -> error", error);
     }) as Post[];
     if (result) {
-      console.log("ListPostComponent -> getFeeds -> result", result)
       this.feeds = result;
     }
   }
