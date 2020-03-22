@@ -13,7 +13,6 @@ import { Post } from 'src/models/post.model';
 })
 export class ProfilePage implements OnInit {
 
-  public srcAvatar = '../assets/imgs/a5.png';
   public srcGridIcon = '../assets/icon/grid.png';
   public srcMarkedIcon = '../assets/icon/marked.png';
 
@@ -71,9 +70,14 @@ export class ProfilePage implements OnInit {
    * Opens a modal to see the post detail.
    */
   public async opnModal(post: Post) {
+    console.log('ProfilePage -> opnModal -> post', post)
     const modal = await this.modalCtrl.create({
       component: DetailPage,
-      componentProps: post
+      componentProps: {
+        'post': post,
+        'feedOwnerName': this.profile.name,
+        'avatar': this.profile.avatar
+      }
     });
     modal.present();
   }
