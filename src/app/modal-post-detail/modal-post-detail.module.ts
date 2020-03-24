@@ -3,8 +3,8 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { DetailPage } from './detail.page';
 import { ListPostPageModule } from '../list-post/list-post.module';
+import { ModalPostDetailPage } from './modal-post-detail.page';
 
 @NgModule({
   imports: [
@@ -12,9 +12,9 @@ import { ListPostPageModule } from '../list-post/list-post.module';
     CommonModule,
     FormsModule,
     ListPostPageModule,
-    RouterModule.forChild([{ path: 'detail', component: DetailPage }])
+    RouterModule.forChild([{ path: 'detail', component: ModalPostDetailPage }])
   ],
-  declarations: [DetailPage],
-  exports: [DetailPage]
+  declarations: [ModalPostDetailPage],
+  exports: [ModalPostDetailPage]
 })
-export class DetailPageModule {}
+export class ModalPostDetailPageModule {}

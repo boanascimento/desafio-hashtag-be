@@ -1,16 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule, NavParams } from '@ionic/angular';
 
-import { DetailPage } from './detail.page';
 import { ListPostPageModule } from '../list-post/list-post.module';
+import { ModalPostDetailPage } from './modal-post-detail.page';
 
-describe('DetailPage', () => {
-  let component: DetailPage;
-  let fixture: ComponentFixture<DetailPage>;
+describe('ModalPostDetailPage', () => {
+  let component: ModalPostDetailPage;
+  let fixture: ComponentFixture<ModalPostDetailPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DetailPage],
+      declarations: [ModalPostDetailPage],
       imports: [
         IonicModule.forRoot(),
         ListPostPageModule
@@ -20,7 +20,7 @@ describe('DetailPage', () => {
       ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DetailPage);
+    fixture = TestBed.createComponent(ModalPostDetailPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

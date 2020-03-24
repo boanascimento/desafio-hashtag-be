@@ -8,7 +8,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { DetailPageModule } from '../detail/detail.module';
+import { ModalPostDetailPageModule } from '../modal-post-detail/modal-post-detail.module';
 
 function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -22,7 +22,7 @@ describe('ProfilePage', () => {
     TestBed.configureTestingModule({
       declarations: [ProfilePage],
       imports: [
-        DetailPageModule,
+        ModalPostDetailPageModule,
         IonicModule.forRoot(), HttpClientModule,
         TranslateModule.forRoot({
           loader: {
