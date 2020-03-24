@@ -4,11 +4,11 @@ import { ModalController, NavParams } from '@ionic/angular';
 import { ModalCommentPage } from '../modal-comment/modal-comment.page';
 
 @Component({
-  selector: 'app-detail',
-  templateUrl: './detail.page.html',
-  styleUrls: ['./detail.page.scss'],
+  selector: 'app-modal-post-detail',
+  templateUrl: './modal-post-detail.page.html',
+  styleUrls: ['./modal-post-detail.page.scss'],
 })
-export class DetailPage implements OnInit {
+export class ModalPostDetailPage implements OnInit {
 
   public post: Post;
 

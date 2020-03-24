@@ -4,15 +4,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ProfilePage } from './profile.page';
-import { DetailPageModule } from '../detail/detail.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { ModalPostDetailPageModule } from '../modal-post-detail/modal-post-detail.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    DetailPageModule,
+    ModalPostDetailPageModule,
     TranslateModule.forChild(),
     RouterModule.forChild([{ path: 'profile', component: ProfilePage }])
   ],
