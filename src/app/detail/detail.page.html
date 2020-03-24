@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button id="btn-dismiss" (click)="dismiss()" expand="block" fill="clear" shape="round">
+        <ion-img class="img-back-button" [src]="backButtonImg"></ion-img>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row>
+    <ion-col size="12" class="ion-no-padding">
+      <app-post [feed]="post"></app-post>
+    </ion-col>
+  </ion-row>
+</ion-content>

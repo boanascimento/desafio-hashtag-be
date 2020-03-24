@@ -1,0 +1,51 @@
+<ion-content>
+  <ion-row class="ion-justify-content-center row-header ion-align-items-center">
+    <ion-col size="3" class=" ion-no-padding">
+      <ion-avatar>
+        <ion-img [src]="profile?.avatar"></ion-img>
+      </ion-avatar>
+    </ion-col>
+    <ion-col size="3" class="ion-no-padding">
+      <p class="title">70</p>
+      <p class="subtitle">Publications</p>
+    </ion-col>
+    <ion-col size="3" class="ion-no-padding">
+      <p class="title">59</p>
+      <p class="subtitle">Followers</p>
+    </ion-col>
+    <ion-col size="3" class="ion-no-padding">
+      <p class="title">70</p>
+      <p class="subtitle">Folling</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="row-about">
+    <ion-col size="12">
+      <ion-text>
+        {{profile?.name}}
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row class="row-segment">
+    <ion-col size="12" class="ion-no-padding">
+      <ion-segment (ionChange)="segmentChanged($event)" [value]="setSegmentFor.ownerPosts">
+        <ion-segment-button [value]="setSegmentFor.ownerPosts">
+          <ion-img [src]="srcGridIcon"></ion-img>
+        </ion-segment-button>
+        <ion-segment-button [value]="setSegmentFor.marckedPosts">
+          <ion-img [src]="srcMarkedIcon"></ion-img>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-col>
+  </ion-row>
+  <ion-row class="row-own-post" *ngIf="ownerPosts">
+    <div size="4" *ngFor="let post of profile?.posts" class="picture"
+      [ngStyle]="{'background-image': 'url(' + post?.picture + ')'}" (click)="opnModal(post)">
+    </div>
+  </ion-row>
+  <ion-row class="row-marked-posts" *ngIf="marckedPosts">
+    <ion-col size="12" class="ion-align-items-center">
+      <ion-img [src]="srcMarkedIcon"></ion-img>
+      <h4>Thare is no marked posts to you!</h4>
+    </ion-col>
+  </ion-row>
+</ion-content>

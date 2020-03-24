@@ -1,0 +1,106 @@
+$color-grays-1: rgba(81, 81, 81, 0.605);
+.row-header {
+  padding: 0.8rem;
+
+  ion-col {
+
+    ion-avatar {
+      width : 5.3rem;
+      height: 5.3rem;
+
+      ion-img {
+        width : 5.3rem;
+        height: 5.3rem;
+      }
+    }
+
+    p.title,
+    p.subtitle {
+      text-align   : center;
+      margin-bottom: 0;
+      margin-top   : 0.1rem;
+    }
+
+    p.title {
+      font-size  : 1.1rem;
+      font-weight: 600;
+    }
+
+    p.subtitle {
+      font-size    : 0.8rem;
+      white-space  : nowrap;
+      overflow     : hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.row-about {
+  ion-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
+
+.row-segment {
+  ion-segment-button {
+    ion-img {
+      width: 1.5rem;
+    }
+  }
+}
+
+.row-own-post {
+  div.picture {
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    background-position: center;
+    border             : 1px solid white;
+
+    @media screen and (max-width: 1024px) {
+      width : 12.8rem;
+      height: 12.8rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      width : 12rem;
+      height: 12rem;
+    }
+
+    @media screen and (max-width: 414px) {
+      width : 8.6rem;
+      height: 8.6rem;
+    }
+
+    @media screen and (max-width: 411px) {
+      width : 8.55rem;
+      height: 8.55rem;
+    }
+
+    @media screen and (max-width: 375px) {
+      width : 7.8rem;
+      height: 7.8rem;
+    }
+
+    @media screen and (max-width: 360px) {
+      width : 7.5rem;
+      height: 7.5rem;
+    }
+
+    @media screen and (max-width: 320px) {
+      width : 6.65rem;
+      height: 6.65rem;
+    }
+  }
+}
+
+.row-marked-posts {
+  ion-img {
+    width: 8rem;
+    margin: 2rem auto;
+  }
+  h4 {
+    text-align: center;
+    color: $color-grays-1;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "desafio-hashtag-be",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

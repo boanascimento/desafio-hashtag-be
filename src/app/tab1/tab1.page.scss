@@ -1,0 +1,17 @@
+ion-header {
+  ion-title {
+    padding-left: 0.5rem;
+    ion-img.camera {
+      width: 2rem;
+    }
+
+    ion-img.insta-name {
+      width: 5rem;
+      margin-left: 1rem;
+    }
+  }
+}
+
+ion-content ion-toolbar {
+  --background: translucent;
+}
