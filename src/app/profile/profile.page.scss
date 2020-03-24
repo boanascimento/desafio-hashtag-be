@@ -1,3 +1,4 @@
+$color-grays-1: rgba(81, 81, 81, 0.605);
 .row-header {
   padding: 0.8rem;
 
@@ -90,5 +91,16 @@
       width : 6.65rem;
       height: 6.65rem;
     }
+  }
+}
+
+.row-marked-posts {
+  ion-img {
+    width: 8rem;
+    margin: 2rem auto;
+  }
+  h4 {
+    text-align: center;
+    color: $color-grays-1;
   }
 }

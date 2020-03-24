@@ -28,7 +28,6 @@ export class ProfileService extends BaseService implements IProfileService {
     return new Promise((resolv, reject) => {
       this.get(`${this.profileEP}/${id}`).subscribe((response: any) => {
         const res = new Profile(response);
-        console.log('ProfileService -> res', res)
         resolv(res);
       }, error => {
         console.log("DiseaseService -> getProfile -> error", error)

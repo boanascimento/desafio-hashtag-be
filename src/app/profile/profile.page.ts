@@ -44,7 +44,6 @@ export class ProfilePage implements OnInit {
     }) as Profile;
     if (result) {
       this.profile = result;
-      console.log('ProfilePage -> getProfile -> this.profile', this.profile)
     }
   }
 
@@ -52,7 +51,7 @@ export class ProfilePage implements OnInit {
    * Gets all segment events when it is changed.
    * @param ev Segment event.
    */
-  segmentChanged(ev: any) {
+  public segmentChanged(ev: any) {
     const setSegment = {
       ownerPosts: async () => {
         this.ownerPosts = true;

@@ -48,8 +48,4 @@ describe('Tab2Page', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it ('verify methods retults', () => {
-    expect(component.teste()).toBeTruthy();
-  })
 });

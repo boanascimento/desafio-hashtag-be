@@ -7,6 +7,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 describe('AppComponent', () => {
 
   let statusBarSpy, splashScreenSpy, platformReadySpy, platformSpy;
@@ -20,6 +28,16 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [
+        HttpClientModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useFactory: createTranslateLoader,
+            deps: [HttpClient],
+          },
+        }),
+      ],
       providers: [
         { provide: StatusBar, useValue: statusBarSpy },
         { provide: SplashScreen, useValue: splashScreenSpy },
