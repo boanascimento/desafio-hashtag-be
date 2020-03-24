@@ -33,7 +33,7 @@ export class ModalCommentPage implements OnInit {
   /**
    * Closes the modal page.
    */
-  dismiss() {
+  public dismiss() {
     this.modalCtrl.dismiss({
       'dismissed': true
     });

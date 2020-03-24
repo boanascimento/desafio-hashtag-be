@@ -20,7 +20,7 @@ describe('ProfilePage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfilePage ],
+      declarations: [ProfilePage],
       imports: [
         DetailPageModule,
         IonicModule.forRoot(), HttpClientModule,
@@ -32,9 +32,9 @@ describe('ProfilePage', () => {
           },
         }),
       ],
-       providers: [
-         ProfileService
-       ]
+      providers: [
+        ProfileService
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProfilePage);

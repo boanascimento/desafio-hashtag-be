@@ -29,6 +29,8 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "cordova-android": "^8.1.0",
     "cordova-android-play-services-gradle-release": "^4.0.0",
+    "cordova-ios": "^5.1.1",
+    "cordova-sqlite-storage": "^5.0.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
@@ -76,9 +78,7 @@
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-android-support-gradle-release": {
-        "ANDROID_SUPPORT_VERSION": "27.+"
-      },
+      "cordova-android-support-gradle-release": {},
       "cordova-android-play-services-gradle-release": {
         "PLAY-SERVICES-ADS": "18.0.0",
         "PLAY-SERVICES-ADS-IDENTIFIER": "17.0.0",
@@ -132,10 +132,11 @@
         "PLAY-SERVICES-VISION-IMAGE-LABEL": "18.0.0",
         "PLAY-SERVICES-WALLET": "17.0.0",
         "PLAY-SERVICES-WEARABLE": "17.0.0"
-      }
+      },
+      "cordova-sqlite-storage": {}
     },
     "platforms": [
-      "android"
+      "ios"
     ]
   }
 }

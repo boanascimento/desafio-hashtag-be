@@ -7,7 +7,7 @@
     </ion-col>
     <ion-col size="3" class="ion-no-padding">
       <p class="title">70</p>
-      <p class="subtitle">Publication</p>
+      <p class="subtitle">Publications</p>
     </ion-col>
     <ion-col size="3" class="ion-no-padding">
       <p class="title">59</p>
@@ -43,13 +43,9 @@
     </div>
   </ion-row>
   <ion-row class="row-marked-posts" *ngIf="marckedPosts">
-    <ion-col size="12" class="ion-no-padding">
-      post marcado
+    <ion-col size="12" class="ion-align-items-center">
+      <ion-img [src]="srcMarkedIcon"></ion-img>
+      <h4>Thare is no marked posts to you!</h4>
     </ion-col>
   </ion-row>
 </ion-content>
-<!-- <ion-footer>
-  <ion-toolbar>
-    <ion-title></ion-title>
-  </ion-toolbar>
-</ion-footer> -->

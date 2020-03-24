@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, NavParams } from '@ionic/angular';
 
 import { DetailPage } from './detail.page';
+import { ListPostPageModule } from '../list-post/list-post.module';
 
 describe('DetailPage', () => {
   let component: DetailPage;
@@ -9,8 +10,14 @@ describe('DetailPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DetailPage ],
-      imports: [IonicModule.forRoot()]
+      declarations: [DetailPage],
+      imports: [
+        IonicModule.forRoot(),
+        ListPostPageModule
+      ],
+      providers: [
+        NavParams
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(DetailPage);
