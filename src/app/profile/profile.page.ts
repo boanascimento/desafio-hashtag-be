@@ -3,8 +3,8 @@ import { Profile } from 'src/models/profile.model';
 import { ProfileService } from 'src/services/profile/profile.service';
 import { ESegments } from './profile.enum';
 import { ModalController } from '@ionic/angular';
-import { DetailPage } from '../detail/detail.page';
 import { Post } from 'src/models/post.model';
+import { ModalPostDetailPage } from '../modal-post-detail/modal-post-detail.page';
 
 @Component({
   selector: 'app-profile',
@@ -69,9 +69,8 @@ export class ProfilePage implements OnInit {
    * Opens a modal to see the post detail.
    */
   public async opnModal(post: Post) {
-    console.log('ProfilePage -> opnModal -> post', post)
     const modal = await this.modalCtrl.create({
-      component: DetailPage,
+      component: ModalPostDetailPage,
       componentProps: {
         'post': post,
         'feedOwnerName': this.profile.name,
