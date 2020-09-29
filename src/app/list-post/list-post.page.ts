@@ -23,11 +23,8 @@ export class ListPostPage implements OnInit {
    * Used to get the feed/posts
    */
   private async getFeeds() {
-    const result = await this.profileService.getFeeds().catch(error => {
-      console.log("ListPostComponent -> getFeeds -> error", error);
-    }) as Post[];
-    if (result) {
+    this.profileService.getFeeds().subscribe((result: Post[]) => {
       this.feeds = result;
-    }
+    });
   }
 }

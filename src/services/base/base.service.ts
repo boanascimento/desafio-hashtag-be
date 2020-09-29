@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 import { timeout } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class BaseService {
@@ -12,7 +13,7 @@ export class BaseService {
     protected http?: HttpClient,
   ) { this.timeOut = 60000; }
 
-  protected get(endpoint: string, params?: any, reqOpts?: any) {
+  protected get(endpoint: string, params?: any, reqOpts?: any): Observable<any> {
     try {
       if (!reqOpts) {
         reqOpts = {

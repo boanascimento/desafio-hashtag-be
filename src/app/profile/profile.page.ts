@@ -39,12 +39,9 @@ export class ProfilePage implements OnInit {
    * Gets the user profile.
    */
   private async getProfile() {
-    const result = await this.profileService.getProfile('1').catch(error => {
-      console.log('ProfilePage -> getProfile -> error', error);
-    }) as Profile;
-    if (result) {
+    this.profileService.getProfile('1').subscribe((result: Profile) => {
       this.profile = result;
-    }
+    })
   }
 
   /**

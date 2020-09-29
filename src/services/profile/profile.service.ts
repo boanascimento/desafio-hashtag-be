@@ -1,19 +1,23 @@
 import { BaseService } from './../base/base.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Profile } from 'src/models/profile.model';
 import { Post } from 'src/models/post.model';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 export abstract class IProfileService {
-  abstract async getProfile(id: string): Promise<Profile>;
-  abstract async getFeeds(): Promise<Post[]>;
+  abstract getProfile(id: string): Observable<Profile>;
+  abstract getFeeds(): Observable<Post[]>;
 }
 
 @Injectable()
 export class ProfileService extends BaseService implements IProfileService {
-  private profileEP = "/profile";
-  private feedsEP = "/feeds";
+  private ep = {
+    profile: "/profile",
+    feeds: "/feeds"
+  }
   constructor(
     protected translateService?: TranslateService,
     protected http?: HttpClient,
@@ -24,33 +28,39 @@ export class ProfileService extends BaseService implements IProfileService {
   /**
    * Used to get user profile.
    */
-  public async getProfile(id: string): Promise<Profile> {
-    return new Promise((resolv, reject) => {
-      this.get(`${this.profileEP}/${id}`).subscribe((response: any) => {
-        const res = new Profile(response);
-        resolv(res);
-      }, error => {
-        console.log("DiseaseService -> getProfile -> error", error)
-        reject(false);
-      }
-      );
-    });
+  public getProfile(id: string): Observable<Profile> {
+    return this.get(`${this.ep.profile}/${id}`).pipe(
+      retry(2),
+      catchError(this.handleError)
+    );
   }
 
 
   /**
    * Used to get user profile.
    */
-  public async getFeeds(): Promise<Post[]> {
-    return new Promise((resolv, reject) => {
-      this.get(this.feedsEP).subscribe((response: any) => {
-        const res = Post.toArray(response);
-        resolv(res);
-      }, error => {
-        console.log("ProfileService -> error -> getFeeds()", error)
-        reject(false);
-      }
-      );
-    });
+  public getFeeds(): Observable<Post[]> {
+    let posts: Array<Post>;
+    return this.get(this.ep.feeds).pipe(
+      retry(2),
+      catchError(this.handleError)
+    );
   }
+
+  /**
+   * Informes an error.
+   * @param error Error.
+   */
+  handleError(error: HttpErrorResponse) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // Error ocurred by the client side
+      errorMessage = error.error.message;
+    } else {
+      // Error ocurred by the server side
+      errorMessage = `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
+    }
+    console.log(errorMessage);
+    return throwError(errorMessage);
+  };
 }
